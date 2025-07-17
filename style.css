@@ -12,14 +12,25 @@ html, body {
   max-width: 100%;
   overflow-x: hidden;
   font-family: 'Segoe UI', sans-serif;
-  background-color: #121212;
-  color: #ffffff;
   display: flex;
-  justify-content: center;     /* Horizontal center */
-  align-items: center;         /* Vertical center */
+  justify-content: center;
+  align-items: center;
   padding: 16px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
+/* =============================
+   BODY THEMES
+============================= */
+body.dark {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body.light {
+  background-color: #f5f5f5;
+  color: #000000;
+}
 
 /* =============================
    CONTAINER
@@ -67,8 +78,10 @@ html, body {
 .slider:before {
   position: absolute;
   content: "";
-  height: 16px; width: 16px;
-  left: 3px; bottom: 3px;
+  height: 16px;
+  width: 16px;
+  left: 3px;
+  bottom: 3px;
   background-color: white;
   border-radius: 50%;
   transition: .4s;
@@ -87,18 +100,24 @@ input:checked + .slider:before {
 ============================= */
 .calculator {
   width: 100%;
-  background-color: #1e1e1e;
   border-radius: 16px;
   padding: 20px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  transition: background-color 0.3s;
+}
+
+body.dark .calculator {
+  background-color: #1e1e1e;
+}
+
+body.light .calculator {
+  background-color: #ffffff;
 }
 
 /* =============================
    DISPLAY
 ============================= */
 .display {
-  background-color: #121212;
-  color: #fff;
   font-size: 2em;
   text-align: right;
   padding: 16px;
@@ -106,6 +125,17 @@ input:checked + .slider:before {
   margin-bottom: 16px;
   min-height: 60px;
   word-break: break-word;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark .display {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body.light .display {
+  background-color: #eeeeee;
+  color: #000000;
 }
 
 /* =============================
@@ -120,16 +150,28 @@ input:checked + .slider:before {
 button {
   padding: 16px;
   font-size: 1.1em;
-  background-color: #2a2a2a;
-  color: #fff;
   border: none;
   border-radius: 12px;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: background-color 0.2s, color 0.2s;
 }
 
-button:hover {
+body.dark button {
+  background-color: #2a2a2a;
+  color: #ffffff;
+}
+
+body.dark button:hover {
   background-color: #3a3a3a;
+}
+
+body.light button {
+  background-color: #dddddd;
+  color: #000000;
+}
+
+body.light button:hover {
+  background-color: #cccccc;
 }
 
 .equal {
@@ -149,34 +191,12 @@ button:hover {
 .footer {
   text-align: center;
   font-size: 0.9em;
-  color: #888;
   margin-top: 10px;
+  transition: color 0.3s;
 }
 
-/* =============================
-   LIGHT MODE
-============================= */
-body.light {
-  background-color: #f5f5f5;
-  color: #000;
-}
-
-body.light .calculator {
-  background-color: #ffffff;
-}
-
-body.light .display {
-  background-color: #eeeeee;
-  color: #000;
-}
-
-body.light button {
-  background-color: #dddddd;
-  color: #000;
-}
-
-body.light button:hover {
-  background-color: #cccccc;
+body.dark .footer {
+  color: #888;
 }
 
 body.light .footer {
