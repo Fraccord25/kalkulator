@@ -1,0 +1,184 @@
+/* =============================
+   RESET & LAYOUT
+============================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #121212;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;     /* Horizontal center */
+  align-items: center;         /* Vertical center */
+  padding: 16px;
+}
+
+
+/* =============================
+   CONTAINER
+============================= */
+.container {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* =============================
+   TOGGLE SWITCH
+============================= */
+.mode-toggle {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 22px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #ccc;
+  border-radius: 22px;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px; width: 16px;
+  left: 3px; bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #00ff88;
+}
+
+input:checked + .slider:before {
+  transform: translateX(18px);
+}
+
+/* =============================
+   CALCULATOR CARD
+============================= */
+.calculator {
+  width: 100%;
+  background-color: #1e1e1e;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+}
+
+/* =============================
+   DISPLAY
+============================= */
+.display {
+  background-color: #121212;
+  color: #fff;
+  font-size: 2em;
+  text-align: right;
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  min-height: 60px;
+  word-break: break-word;
+}
+
+/* =============================
+   BUTTON GRID
+============================= */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+button {
+  padding: 16px;
+  font-size: 1.1em;
+  background-color: #2a2a2a;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #3a3a3a;
+}
+
+.equal {
+  background-color: #00ff88 !important;
+  color: #000 !important;
+  grid-column: span 2;
+}
+
+.clear {
+  background-color: #ff5555 !important;
+  color: #fff !important;
+}
+
+/* =============================
+   FOOTER
+============================= */
+.footer {
+  text-align: center;
+  font-size: 0.9em;
+  color: #888;
+  margin-top: 10px;
+}
+
+/* =============================
+   LIGHT MODE
+============================= */
+body.light {
+  background-color: #f5f5f5;
+  color: #000;
+}
+
+body.light .calculator {
+  background-color: #ffffff;
+}
+
+body.light .display {
+  background-color: #eeeeee;
+  color: #000;
+}
+
+body.light button {
+  background-color: #dddddd;
+  color: #000;
+}
+
+body.light button:hover {
+  background-color: #cccccc;
+}
+
+body.light .footer {
+  color: #444;
+}
